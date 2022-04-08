@@ -14,3 +14,15 @@
         console.log(`[${now()}] Bulunamayan bazı linelar vardır: \n`)
         for(let i of failedLines_) console.log(`- ${i}`)
     }
+
+
+    // İf it is negative statement, like dont increment kpis
+    
+    let indexofArray_voltekVal_ = ['125,55','127,55']
+    failedLines_voltekVal_ = [];   
+    for(i=0; i<indexofArray_voltekVal_.length ; i++){
+        if(command_voltekVal.match(' '+indexofArray_voltekVal_[i]+' (.*)=[0-9]+;')){
+            console.log('!! Aşağıdaki kpiların artmaması gerekmektedir : \n')
+            console.log(response_voltekVal.match(' '+indexofArray_voltekVal_[i]+' (.*)=[0-9]+;')[0])
+        }
+    }
