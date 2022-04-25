@@ -1,0 +1,6 @@
+//     // Copy configuration file before change
+//     var d = new Date();
+//     let dd = d.getDate().toString()
+//     let mm = ("0" + (d.getMonth() + 1)).slice(-2)
+//     let YY = d.getFullYear().toString()
+//     let dateString = dd+mm+YY
