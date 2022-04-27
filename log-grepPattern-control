@@ -1,0 +1,12 @@
+    // Some Definitions before run command
+    let logPath = '/argela/LOGS/'
+    const date = new Date();
+    let grepPattern = '"Volte Corr XDR"'
+    let logFileName = 'S1_MME_PROBE_H95_I0.log'
+    let currentDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-')
+    let command = `grep -a -i ${grepPattern} ${logFileName} | grep -a ${currentDate} | wc -l`
+    
+    let resultCount = await executeBashCommandNoLog(command,logPath,param.sshServerForBTKReports)
+    resultCount = resultCount.split('\n')[0]
+    resultCountBefore = parseInt(resultCount)
+    console.log(resultCountBefore)
